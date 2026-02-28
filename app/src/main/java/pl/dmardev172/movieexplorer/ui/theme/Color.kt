@@ -1,4 +1,4 @@
-package pl.dmardev172.hedgefirstapp.ui.theme
+package pl.dmardev172.movieexplorer.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

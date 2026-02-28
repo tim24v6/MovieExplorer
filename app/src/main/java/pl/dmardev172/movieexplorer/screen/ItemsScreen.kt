@@ -1,4 +1,4 @@
-package pl.dmardev172.hedgefirstapp.screen
+package pl.dmardev172.movieexplorer.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -20,8 +20,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import pl.dmardev172.hedgefirstapp.WindowType
-import pl.dmardev172.hedgefirstapp.rememberWindowSize
+import pl.dmardev172.movieexplorer.WindowType
+import pl.dmardev172.movieexplorer.rememberWindowSize
 
 @Composable
 fun ItemsScreen() {

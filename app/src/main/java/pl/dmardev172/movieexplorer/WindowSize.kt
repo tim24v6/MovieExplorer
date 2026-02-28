@@ -1,4 +1,4 @@
-package pl.dmardev172.hedgefirstapp
+package pl.dmardev172.movieexplorer
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration

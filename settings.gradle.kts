@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HedgeFirstApp"
+rootProject.name = "MovieExplorer"
 include(":app")
