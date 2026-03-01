@@ -1,9 +1,16 @@
-MovieExplorer – Android App (Kotlin, Compose, Koin, Retrofit)
+## MovieExplorer – Android App (Kotlin, Compose, Koin, Retrofit)
 
-A modern Android application using
+### 📄 A modern Android application using
 - clean Architecture
 - dependency injection with Koin
 - asynchronous networking with Retrofit & Coroutines
 - implemented pagination
 - error handling
-- and Material 3 UI
+- Jetpack Composeand Material3
+- uses free api.themoviedb.org/3/
+
+### 🎯 Functionalities
+
+### 🔥 Technology stack
+
+### 🏗 Architecture
