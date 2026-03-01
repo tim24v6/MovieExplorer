@@ -19,6 +19,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -60,9 +62,27 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    // Koin for Android
+    val koinVersion = "3.2.0"
+    implementation("io.insert-koin:koin-androidx-compose:$koinVersion")
+
+    // Retrofit
+    val moshiVersion = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$moshiVersion")
+    implementation("com.squareup.retrofit2:converter-moshi:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0") //4.11.0
+
+    // Coil for Compose
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    implementation("androidx.multidex:multidex:2.0.1")
 
     // Tests
     testImplementation(libs.junit)
+    testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
