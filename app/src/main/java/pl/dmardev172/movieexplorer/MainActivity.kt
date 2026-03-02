@@ -43,6 +43,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MovieExplorerTheme {
-        Greeting("Electric Eel")
+        Greeting("Iguana River Brass Band")
     }
 }

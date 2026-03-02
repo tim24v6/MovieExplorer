@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
 }
 
+val omdbApiKey = project.findProperty("OMDB_API_KEY") as String? ?: ""
+
 android {
     namespace = "pl.dmardev172.movieexplorer"
     compileSdk = 34
@@ -14,6 +16,12 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField(
+            "String",
+            "OMDB_API_KEY",
+            "\"$omdbApiKey\""
+        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -33,19 +41,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.14" // 1.4.3
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -65,20 +74,25 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     // Koin for Android
-    val koinVersion = "3.2.0"
+    val koinVersion = "3.5.6"
+    implementation("io.insert-koin:koin-android:$koinVersion")
     implementation("io.insert-koin:koin-androidx-compose:$koinVersion")
 
     // Retrofit
-    val moshiVersion = "2.9.0"
-    implementation("com.squareup.retrofit2:retrofit:$moshiVersion")
-    implementation("com.squareup.retrofit2:converter-moshi:$moshiVersion")
-    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0") //4.11.0
+    val retrofitVersion = "2.11.0" // 2.9.0
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+
+    // Moshi
+    val moshiVersion = "1.15.1"
+    implementation("com.squareup.moshi:moshi:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+    // implementation("com.squareup.okhttp3:okhttp:4.12.0") //4.11.0
 
     // Coil for Compose
     implementation("io.coil-kt:coil-compose:2.6.0")
 
-    implementation("androidx.multidex:multidex:2.0.1")
+    // implementation("androidx.multidex:multidex:2.0.1")
 
     // Tests
     testImplementation(libs.junit)

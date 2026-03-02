@@ -6,7 +6,7 @@
 - asynchronous networking with Retrofit & Coroutines
 - implemented pagination
 - error handling
-- Jetpack Composeand Material3
+- Jetpack Compose and Material3
 - uses free api.themoviedb.org/3/
 
 ### 🎯 Functionalities
