@@ -10,7 +10,7 @@ class MovieRepositoryImpl(
     private val apiKey: String
 ) : MovieRepository {
 
-    override suspend fun searchMovies(query:String): List<Movie> {
+    override suspend fun searchMovies(query: String): List<Movie> {
         val response = api.searchMovies(apiKey, query)
         val searchResults = response.Search ?: return emptyList()
 
