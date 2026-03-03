@@ -101,6 +101,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1")
     // Turbine as optional - for Flow testing
 //     testImplementation("app.cash.turbine:turbine:1.0.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+    testImplementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    testImplementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+    testImplementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
