@@ -72,6 +72,7 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    testImplementation("junit:junit:4.12")
 
     // Koin for Android
     val koinVersion = "3.5.6"
@@ -97,6 +98,9 @@ dependencies {
     // Tests
     testImplementation(libs.junit)
     testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1")
+    // Turbine as optional - for Flow testing
+//     testImplementation("app.cash.turbine:turbine:1.0.0")
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
